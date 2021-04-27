@@ -12,7 +12,7 @@ def student_view1(mi,pre,upd):
     root = Tk()
     #root.geometry('600x700')
     root.title("STUDENT PROFILE")
-    root.iconbitmap("./4023873-brain-learning-machine-machine-learning-ml_112855.ico")
+    root.iconbitmap("Icons/4023873-brain-learning-machine-machine-learning-ml_112855.ico")
 
     
     
@@ -60,6 +60,8 @@ def student_view1(mi,pre,upd):
     Button(root, text='Predict',width=22,bg='brown',fg='white',command = pre).grid(row = 6, column = 2, rowspan = 2, stick = S, padx = 5, pady = 5)
     Button(root, text='Update Profile',width=22,bg='brown',fg='white',command = upd).grid(row = 7, column = 1, rowspan = 2, padx = 5, pady = 5)
     root.mainloop()
+
+#student_view1(1,2,3)
 
 
 
