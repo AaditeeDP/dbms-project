@@ -12,7 +12,7 @@ import time
         
     
 
-def student_view1(name,rno,sem,branch,pas,update,hashed):
+def student_view3(name,rno,sem,branch,pas,update,hashed):
 
     root = Tk()
     root.geometry('500x600')

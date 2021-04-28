@@ -7,7 +7,7 @@ Created on Mon Apr 26 14:39:48 2021
 
 from tkinter import *
 
-def student_view1(name,rno,sem,branch,pas,update):
+def student_view2(name,rno,sem,branch,pas,update):
 
     root = Tk()
     root.geometry('500x600')
