@@ -216,6 +216,7 @@ class student:
                     and seat_no in(select seat_no from Student
                     where roll_no = '{}' )'''.format(self.sub[r][0],self.student_id)
             marks = self.cur.execute(self.query3).fetchone()
+            #print(self.query3,marks)
             Label(root, text = '{} :- '.format(self.sub[r][1]), borderwidth=3, font=("bold", 12), fg = 'red').grid(row = r+3, column = 0, columnspan = 2)
             if not marks:
                 marks = ['nil','nil','nil']

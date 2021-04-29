@@ -7,7 +7,7 @@ def teachers_view(name, rno, sem, branch, pas, update, hashed):##change the attr
     root = Tk()
     root.geometry('500x600')
     root.title("UPDATE PROFILE PASSWORD")
-    root.iconbitmap("./3289566-assistant-educator-professor-showing-teacher-teaching_107089.ico")
+    root.iconbitmap("../Icon/3289566-assistant-educator-professor-showing-teacher-teaching_107089.ico")
 
     def pass_check():
         if entry_2.get() != entry_3.get():
