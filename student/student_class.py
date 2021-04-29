@@ -247,10 +247,28 @@ class student:
         body_1 = Label(root, text="Acc. to the model your predicted cgpa is : ",font=('bold', 10), bg = 'white')
         body_1.place(x=140,y=103)
         
-        Button(root, text='Predict',width=22,bg='brown',fg='white').place(x=80,y=160)
         
-        entry_pred = Entry(root)
-        entry_pred.place(x=300,y=165,width = 140)
+        def pq():
+            p = self.cur.execute('''select ia_1,ia_2,end_sem from Marks where marks.seat_no = '{}' '''.format(self.student[5])).fetchall()
+            print(p)
+            if not p:
+                Label(root, text='Marks not available!',font=('italic', 8), bg = 'white').place(x=350,y =100 )
+            pr = 0 
+            for x in range(len(p)):
+                pr += p[x][0]/2 + p[x][1]/2 + p[x][2]
+            print(pr)
+            pr = (pr * 10.7764350453) / (len(p)*100)
+            
+            if pr>10:
+                pr = 10
+            
+            entry_pred = Entry(root)
+            entry_pred.insert(END, pr)
+            entry_pred.place(x=300,y=165,width = 140)
+        
+        
+        Button(root, text='Predict',width=22,bg='brown',fg='white',command = pq).place(x=80,y=160)
+        
         
         body_2 = Label(root, text="**real life result may differ due to various factors",font=('italic', 8), bg = 'white')
         body_2.place(x=140,y=225)

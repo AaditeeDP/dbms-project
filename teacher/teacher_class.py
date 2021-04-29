@@ -232,7 +232,7 @@ class teacher:
             
             def query1(e1g):
                 marks1 = self.cur.execute('''select DISTINCT(marks.seat_no),ia_1,ia_2,end_sem from Student,Marks WHERE marks.seat_no = Student.seat_no
-                    and roll_no = '{}'; '''.format(e1g)).fetchone()
+                    and roll_no = '{}' and marks.sub_id = '{}' ; '''.format(e1g,self.teacher[3])).fetchone()
                 print(marks1)
                 marks2 = marks1
                 if not marks1:
@@ -297,7 +297,7 @@ class teacher:
             
         
         for r in range(len(names)):
-            self.query3 = '''select DISTINCT(marks.seat_no),roll_no,ia_1,ia_2,end_sem from Student,Marks WHERE marks.seat_no = Student.seat_no and roll_no = '{}' '''.format(names[r][1])
+            self.query3 = '''select DISTINCT(marks.seat_no),roll_no,ia_1,ia_2,end_sem from Student,Marks WHERE marks.seat_no = Student.seat_no and marks.sub_id = '{}' and roll_no = '{}' '''.format(self.teacher[3],names[r][1])
             print(self.query3)
             marks = self.cur.execute(self.query3).fetchone()
             print(marks)
