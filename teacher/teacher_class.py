@@ -9,7 +9,7 @@ from tkinter import *
 import bcrypt
 import time    
 import sqlite3 
-    
+import os
         
 
 class teacher:
@@ -27,9 +27,10 @@ class teacher:
 
     
     def __init__(self,tid,oldpass):
+        print(os.getcwd())
         self.teacher_id = tid
         self.opass = oldpass
-        self.conn = sqlite3.connect('../dbms.db')
+        self.conn = sqlite3.connect('dbms.db')
         self.cur = self.conn.cursor()
         self.query1 = "SELECT * FROM teacher where t_id = '{}'".format(self.teacher_id)
         self.query2 = '''select ia_1,ia_2,end_sem from Student,Marks WHERE
@@ -58,7 +59,7 @@ class teacher:
         root = Tk()
         #root.geometry('600x700')
         root.title("teacher PROFILE")
-        root.iconbitmap("../Icons/4023873-brain-learning-machine-machine-learning-ml_112855.ico")
+        root.iconbitmap("Icons/4023873-brain-learning-machine-machine-learning-ml_112855.ico")
     
         
         
@@ -118,7 +119,7 @@ class teacher:
         root = Tk()
         root.geometry('500x600')
         root.title("UPDATE PROFILE")
-        root.iconbitmap("../Icons/4023873-brain-learning-machine-machine-learning-ml_112855.ico")
+        root.iconbitmap("Icons/4023873-brain-learning-machine-machine-learning-ml_112855.ico")
     
         
         def up():
@@ -199,7 +200,7 @@ class teacher:
         root = Tk()
         #root.geometry('600x700')
         root.title("teacher PROFILE")
-        root.iconbitmap("../Icons/4023873-brain-learning-machine-machine-learning-ml_112855.ico")
+        root.iconbitmap("Icons/4023873-brain-learning-machine-machine-learning-ml_112855.ico")
     
         
         
@@ -223,7 +224,7 @@ class teacher:
             root = Tk()
         #root.geometry('600x700')
             root.title("Update marks")
-            root.iconbitmap("../Icons/4023873-brain-learning-machine-machine-learning-ml_112855.ico")
+            root.iconbitmap("Icons/4023873-brain-learning-machine-machine-learning-ml_112855.ico")
             label_0 = Label(root, text="{}'s Marks Portal".format(self.teacher[0]),width=20,font=("bold", 20)).grid(row = 0,column = 1,columnspan = 3,rowspan = 2)
             Label(root, text = 'Roll no', borderwidth=3, font=("bold", 14), fg = 'green',bg = 'yellow').grid(row = 2, column = 1, columnspan = 2)
             entry_1 = Entry(root)
@@ -323,7 +324,7 @@ class teacher:
         root.title("CGPA Predictor")
         root['bg'] = 'white'
         ##please include your file path for the icon here
-        root.iconbitmap("../Icons/4023873-brain-learning-machine-machine-learning-ml_112855.ico")
+        root.iconbitmap("Icons/4023873-brain-learning-machine-machine-learning-ml_112855.ico")
         
         title_pred = Label(root, text="CGPA Prediction",width=20,font=("bold", 20), bg = 'white')
         title_pred.place(x=90,y=53)
@@ -352,7 +353,7 @@ class teacher:
         root = Tk()
         root.geometry('500x600')
         root.title("UPDATE PROFILE PASSWORD")
-        root.iconbitmap("../Icons/4023873-brain-learning-machine-machine-learning-ml_112855.ico")
+        root.iconbitmap("Icons/4023873-brain-learning-machine-machine-learning-ml_112855.ico")
     
         
         def pass_check():

@@ -9,6 +9,7 @@ from tkinter import *
 import bcrypt
 import time    
 import sqlite3 
+import os
     
         
 
@@ -27,9 +28,10 @@ class student:
 
     
     def __init__(self,sid,oldpass):
+        print(os.getcwd())
         self.student_id = sid
         self.opass = oldpass
-        self.conn = sqlite3.connect('../dbms.db')
+        self.conn = sqlite3.connect('dbms.db')
         self.cur = self.conn.cursor()
         self.query1 = "SELECT fname,lname,roll_no,semester,branch,seat_no FROM Student where roll_no = '{}'".format(self.student_id)
         self.query2 = '''select sd.sub_id,sd.sub_name from Sub_detail as sd,Subjects as s,Student as st,Courses as c
@@ -57,7 +59,7 @@ class student:
         root = Tk()
         #root.geometry('600x700')
         root.title("STUDENT PROFILE")
-        root.iconbitmap("../Icons/4023873-brain-learning-machine-machine-learning-ml_112855.ico")
+        root.iconbitmap("Icons/4023873-brain-learning-machine-machine-learning-ml_112855.ico")
     
         
         
@@ -117,7 +119,7 @@ class student:
         root = Tk()
         root.geometry('500x600')
         root.title("UPDATE PROFILE")
-        root.iconbitmap("../Icons/4023873-brain-learning-machine-machine-learning-ml_112855.ico")
+        root.iconbitmap("Icons/4023873-brain-learning-machine-machine-learning-ml_112855.ico")
     
         
         def up():
@@ -198,7 +200,7 @@ class student:
         root = Tk()
         #root.geometry('600x700')
         root.title("STUDENT PROFILE")
-        root.iconbitmap("../Icons/4023873-brain-learning-machine-machine-learning-ml_112855.ico")
+        root.iconbitmap("Icons/4023873-brain-learning-machine-machine-learning-ml_112855.ico")
     
         
         
@@ -237,7 +239,7 @@ class student:
         root.title("CGPA Predictor")
         root['bg'] = 'white'
         ##please include your file path for the icon here
-        root.iconbitmap("../Icons/4023873-brain-learning-machine-machine-learning-ml_112855.ico")
+        root.iconbitmap("Icons/4023873-brain-learning-machine-machine-learning-ml_112855.ico")
         
         title_pred = Label(root, text="CGPA Prediction",width=20,font=("bold", 20), bg = 'white')
         title_pred.place(x=90,y=53)
@@ -266,7 +268,7 @@ class student:
         root = Tk()
         root.geometry('500x600')
         root.title("UPDATE PROFILE PASSWORD")
-        root.iconbitmap("../Icons/4023873-brain-learning-machine-machine-learning-ml_112855.ico")
+        root.iconbitmap("Icons/4023873-brain-learning-machine-machine-learning-ml_112855.ico")
     
         
         def pass_check():
