@@ -211,15 +211,26 @@ class student:
         Label(root, text = 'IA 2', borderwidth=3, font=("bold", 14), fg = 'green',bg = 'yellow').grid(row = 2, column = 4, columnspan = 2)
         Label(root, text = 'ENDSEM', borderwidth=3, font=("bold", 14), fg = 'green',bg = 'yellow').grid(row = 2, column = 6, columnspan = 2)
     
+    
+        E_id= self.cur.execute('''select sub_id,sub_name from Sub_detail 
+                               where sub_id in 
+                               (select elective_no from Student 
+                                where roll_no = {})'''.format(self.student_id)).fetchone()
+        print(E_id)
+        E_id = (E_id[0],'**(O) '+E_id[1])
+        print(E_id)
+        allsub = self.sub
+        if E_id:
+            allsub.append(E_id)
         
-        for r in range(len(self.sub)):
+        for r in range(len(allsub)):
             self.query3 = '''SELECT ia_1,ia_2,end_sem from Marks
                     where sub_id = '{}' 
                     and seat_no in(select seat_no from Student
-                    where roll_no = '{}' )'''.format(self.sub[r][0],self.student_id)
+                    where roll_no = '{}' )'''.format(allsub[r][0],self.student_id)
             marks = self.cur.execute(self.query3).fetchone()
             #print(self.query3,marks)
-            Label(root, text = '{} :- '.format(self.sub[r][1]), borderwidth=3, font=("bold", 12), fg = 'red').grid(row = r+3, column = 0, columnspan = 2)
+            Label(root, text = '{} :- '.format(allsub[r][1]), borderwidth=3, font=("bold", 12), fg = 'red').grid(row = r+3, column = 0, columnspan = 2)
             if not marks:
                 marks = ['nil','nil','nil']
                 
@@ -354,5 +365,6 @@ class student:
 
 '''s = student('1020180','$2b$10$4arFcZWtWIYNQKwLHG.Xe.4ddaXNXGKZ126YkvEmWFDtlU1VUaXHi')
 s.main_view()
+s.marksheet()
 s.close_conn()'''
 

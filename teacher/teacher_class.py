@@ -63,7 +63,7 @@ class teacher:
     
         
         
-        label_0 = Label(root, text="{}'s Profile".format(self.teacher[0]),width=20,font=("bold", 20)).grid(row = 0,column = 0,columnspan = 3)
+        label_0 = Label(root, text="{} MA'AM's Profile".format(self.teacher[0]),width=20,font=("bold", 20)).grid(row = 0,column = 0,columnspan = 3)
         
         
         label_1 = Label(root, text="Name:- ",font=("bold", 12),fg = 'red')
@@ -150,7 +150,7 @@ class teacher:
             
             
             
-        label_0 = Label(root, text="{}'s Profile".format(self.teacher[0]),width=20,font=("bold", 20)).grid(row = 0,column = 3,columnspan = 3)
+        label_0 = Label(root, text="{} MA'AM's Profile".format(self.teacher[0]),width=20,font=("bold", 20)).grid(row = 0,column = 3,columnspan = 3)
         
         
         
@@ -204,7 +204,7 @@ class teacher:
     
         
         
-        label_0 = Label(root, text="{}'s Marks Portal".format(self.teacher[0]),width=20,font=("bold", 20)).grid(row = 0,column = 1,columnspan = 3,rowspan = 2)
+        label_0 = Label(root, text="{} MA'AM's Marks Portal".format(self.teacher[0]),font=("bold", 20)).grid(row = 0,column = 1,columnspan = 3,rowspan = 2)
            
         Label(root, text = 'Student Name', borderwidth=3, font=("bold", 14), fg = 'green',bg = 'yellow').grid(row = 2, column = 0, columnspan = 2)
         Label(root, text = 'Roll NO', borderwidth=3, font=("bold", 14), fg = 'green',bg = 'yellow').grid(row = 2, column = 2, columnspan = 2)
@@ -225,7 +225,7 @@ class teacher:
         #root.geometry('600x700')
             root.title("Update marks")
             root.iconbitmap("Icons/4023873-brain-learning-machine-machine-learning-ml_112855.ico")
-            label_0 = Label(root, text="{}'s Marks Portal".format(self.teacher[0]),width=20,font=("bold", 20)).grid(row = 0,column = 1,columnspan = 3,rowspan = 2)
+            label_0 = Label(root, text="{} MA'AM's Marks Portal".format(self.teacher[0]),font=("bold", 20)).grid(row = 0,column = 1,columnspan = 3,rowspan = 2)
             Label(root, text = 'Roll no', borderwidth=3, font=("bold", 14), fg = 'green',bg = 'yellow').grid(row = 2, column = 1, columnspan = 2)
             entry_1 = Entry(root)
             entry_1.grid(row = 2, column = 4, columnspan = 2)
@@ -382,7 +382,7 @@ class teacher:
                 time.sleep(1)
                 root.destroy()
         
-        label_0 = Label(root, text="{}'s Profile".format(self.teacher[0]),width=20,font=("bold", 20)).grid(row = 0,column = 3,columnspan = 3)
+        label_0 = Label(root, text="{} MA'AM's Profile".format(self.teacher[0]),width=20,font=("bold", 20)).grid(row = 0,column = 3,columnspan = 3)
         
         
         
